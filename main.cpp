@@ -4,20 +4,21 @@
 //
 //  Created by Bhumika Vaish on 01/05/25.
 //
-#include "ColorPair.hpp"
+#include "ColorPairUtility.hpp"
 #include "ColorpairTest.hpp"
 
 void runColorpairTests()
 {
-    ColorPairTests::testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
-    ColorPairTests::testNumberToPair(5, TelCoColorCoder::WHITE, TelCoColorCoder::SLATE);
+    ColorPairTests::testNumberToPair(4, ColorPairInfo::WHITE, ColorPairInfo::BROWN);
+    ColorPairTests::testNumberToPair(5, ColorPairInfo::WHITE, ColorPairInfo::SLATE);
 
-    ColorPairTests::testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
-    ColorPairTests::testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
+    ColorPairTests::testPairToNumber(ColorPairInfo::BLACK, ColorPairInfo::ORANGE, 12);
+    ColorPairTests::testPairToNumber(ColorPairInfo::VIOLET, ColorPairInfo::SLATE, 25);
 }
 
 int main()
 {
     runColorpairTests();
+    TelCoColorCoder::PrintColorCodingManual();
     return 0;
 }

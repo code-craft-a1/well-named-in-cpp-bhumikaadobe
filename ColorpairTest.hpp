@@ -13,9 +13,9 @@
 
 namespace ColorPairTests
 {
-    void testNumberToPair(int pairNumber,TelCoColorCoder::MajorColor expectedMajor,TelCoColorCoder::MinorColor expectedMinor);
+void testNumberToPair(int pairNumber,ColorPairInfo::MajorColor expectedMajor,ColorPairInfo::MinorColor expectedMinor);
     
-    void testPairToNumber(TelCoColorCoder::MajorColor major,TelCoColorCoder::MinorColor minor,int expectedPairNumber);
+void testPairToNumber(ColorPairInfo::MajorColor major,ColorPairInfo::MinorColor minor,int expectedPairNumber);
 }
 
 #endif /* ColorpairTest_hpp */

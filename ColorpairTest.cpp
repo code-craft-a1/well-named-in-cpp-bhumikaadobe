@@ -1,21 +1,30 @@
 //
-//  ColorpairTest.hpp
+//  ColorpairTest.cpp
 //  wellnamed
 //
 //  Created by Bhumika Vaish on 01/05/25.
 //
 
-#ifndef ColorpairTest_hpp
-#define ColorpairTest_hpp
-
-#include <stdio.h>
-#include "ColorPair.hpp"
+#include "ColorpairTest.hpp"
+#include <iostream>
+#include <assert.h>
+#include "ColorPairUtility.hpp"
 
 namespace ColorPairTests
 {
-void testNumberToPair(int pairNumber,ColorPairInfo::MajorColor expectedMajor,ColorPairInfo::MinorColor expectedMinor);
-    
-void testPairToNumber(ColorPairInfo::MajorColor major,ColorPairInfo::MinorColor minor,int expectedPairNumber);
-}
+    void testNumberToPair(int pairNumber,MajorColor expectedMajor,MinorColor expectedMinor)
+    {
+        ColorPair colorPair =
+        TelCoColorCoder::GetColorFromPairNumber(pairNumber);
+        std::cout << "Got pair " << colorPair.ToString() << std::endl;
+        assert(colorPair.getMajor() == expectedMajor);
+        assert(colorPair.getMinor() == expectedMinor);
+    }
 
-#endif /* ColorpairTest_hpp */
+    void testPairToNumber(MajorColor major,MinorColor minor,int expectedPairNumber)
+    {
+        int pairNumber = TelCoColorCoder::GetPairNumberFromColor(major, minor);
+        std::cout << "Got pair number " << pairNumber << std::endl;
+        assert(pairNumber == expectedPairNumber);
+    }
+}

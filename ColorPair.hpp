@@ -4,34 +4,29 @@
 //
 //  Created by Bhumika Vaish on 01/05/25.
 //
-
 #ifndef ColorPair_hpp
 #define ColorPair_hpp
 
 #include <stdio.h>
 #include <string>
+#include "ColorDefs.hpp"
 
-namespace TelCoColorCoder
+using ColorPairInfo::MajorColor;
+using ColorPairInfo::MinorColor;
+
+class ColorPair
 {
-    enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
-    enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
-
-    class ColorPair
-    {
-    private:
-        TelCoColorCoder::MajorColor majorColor;
-        TelCoColorCoder::MinorColor minorColor;
-        
-    public:
-        ColorPair(TelCoColorCoder::MajorColor major, TelCoColorCoder::MinorColor minor):
-        majorColor(major), minorColor(minor)
-        {}
-        TelCoColorCoder::MajorColor getMajor();
-        TelCoColorCoder::MinorColor getMinor();
-        std::string ToString();
-    };
-    ColorPair GetColorFromPairNumber(int pairNumber);
-    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
-}
+private:
+    MajorColor majorColor;
+    MinorColor minorColor;
+    
+public:
+    ColorPair(MajorColor major, MinorColor minor):
+    majorColor(major), minorColor(minor)
+    {}
+    MajorColor getMajor();
+    MinorColor getMinor();
+    std::string ToString();
+};
 
 #endif /* ColorPair_hpp */
